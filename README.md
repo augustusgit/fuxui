@@ -1,6 +1,6 @@
-# wurkfux
+# Wurkfux
 
-A new Flutter project.
+Wurkfux mobile client app
 
 ## Getting Started
 
