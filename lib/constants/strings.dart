@@ -25,6 +25,26 @@ class AppStrings {
   static const EditProfileRoute = '/edit_profile';
 
 //Texts
-  static const ResetPassInstruction =
-      'Enter your email address in the space below and we will send you instructions on how to reset your password.';
+  static const RealTimeService = 'Real time Services';
+  static const VirtualServices = 'Virtual Services On-Demand';
+  static const Signup = 'Signup';
+  static const Welcome = 'Welcome.';
+  static const WelcomeSub = 'Login with  social or fill the form to continue.';
+  static const EmailAddressHint = 'Email Address';
+  static const PasswordHint = 'Password';
+  static const UserNameHint = 'Username';
+  static const PhoneHint = 'Phone Number';
+  static const Phone = 'Phone';
+  static const Remember = 'Remember me next time';
+  static const Forgot = 'Forgot password?';
+  static const ForgotPassSub =
+      'If you need help with resetting your password, we can help you with a link to reset it.';
+  static const WithGoogle = 'Continue with Google';
+  static const Continue = 'Continue';
+  static const Login = 'Login';
+  static const PhoneInstead = 'Use phone number instead';
+
+  static const GetStarted = 'Let’s Get Started!';
+  static const Agreement =
+      'By signing up, you agree to the Terms of Service and Privacy Policy.';
 }
