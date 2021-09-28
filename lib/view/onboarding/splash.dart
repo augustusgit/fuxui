@@ -29,7 +29,6 @@ class _SplashScreenState extends State<Splash> {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Scaffold(
-      backgroundColor: Color.fromRGBO(254, 135, 0, 1),
       body: SafeArea(
           child: Container(
               height: SizeConfig.screenHeight,
