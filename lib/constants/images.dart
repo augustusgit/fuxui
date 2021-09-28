@@ -13,4 +13,7 @@ class AppImages {
       'https://images.unsplash.com/photo-1614090965443-3df21c6906ec?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8YmVhdXRpZnVsJTIwZ2lybHN8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80';
   static const personPlaceholder2 = 'https://media.allure'
       '.com/photos/5a26c1d8753d0c2eea9df033/3:4/w_1262,h_1683,c_limit/mostbeautiful.jpg';
+
+  static const personPlaceholder3 =
+      'https://cdn.thetealmango.com/wp-content/uploads/2021/08/Omar-Borkan-Al-Gala-one-more.jpg';
 }

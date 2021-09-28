@@ -4,6 +4,7 @@ import 'package:wurkfux/constants/colors.dart';
 import 'package:wurkfux/constants/styles.dart';
 import 'package:wurkfux/view/main/chat/messages.dart';
 import 'package:wurkfux/view/main/home/home_screen.dart';
+import 'package:wurkfux/view/main/profile/user_profile.dart';
 import 'package:wurkfux/view/widgets/custom_bottom_nav_bar.dart';
 import 'package:wurkfux/view/wurk_fux_icons.dart';
 
@@ -101,9 +102,7 @@ class _Dashboard extends State<Dashboard> {
       Container(
         child: Text('ABS3'),
       ),
-      Container(
-        child: Text('ABS4'),
-      ),
+      Profile(),
     ];
     return IndexedStack(
       index: _currentIndex,

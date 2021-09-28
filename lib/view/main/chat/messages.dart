@@ -18,8 +18,7 @@ class _Messages extends State<MessagesScreen> {
               chatID: 1,
               userImageUrl: AppImages.personPlaceholder,
               userName: 'Queen Catherina',
-              lastMessage: 'i’d like the prototype '
-                  'today please',
+              lastMessage: 'i’d like the prototype today please',
               lastMessageTimeStamp: '2m',
             )
           : Messages(

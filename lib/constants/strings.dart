@@ -42,6 +42,7 @@ class AppStrings {
   static const WithGoogle = 'Continue with Google';
   static const Continue = 'Continue';
   static const Login = 'Login';
+  static const Logout = 'Logout';
   static const PhoneInstead = 'Use phone number instead';
 
   static const GetStarted = 'Let’s Get Started!';
@@ -60,4 +61,14 @@ class AppStrings {
   static const TimelineChild = 'Here\'s an overview of your previous orders';
 
   static const MessagesHome = 'Messages';
+  static const ProfileHome = 'Profile';
+  static const EditProfileText = 'Edit Profile';
+  static const MeLabel = 'Me';
+  static const ApplicationLabel = 'Application';
+  static const AccountLabel = 'Account';
+  static const ChangePass = 'Change Password';
+
+  static const Terms = 'Terms of Service';
+  static const PP = 'Privacy Policy';
+  static const Licenses = 'Licenses';
 }
