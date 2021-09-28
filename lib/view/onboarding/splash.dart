@@ -1,7 +1,7 @@
+import 'package:WurkFux/constants/colors.dart';
 import 'package:WurkFux/constants/images.dart';
 import 'package:WurkFux/constants/strings.dart';
 import 'package:WurkFux/view/utilities/size_config.dart';
-import 'package:WurkFux/view/widgets/spacing.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -29,26 +29,22 @@ class _SplashScreenState extends State<Splash> {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Scaffold(
+      backgroundColor: AppColors.primaryColor,
       body: SafeArea(
           child: Container(
-              height: SizeConfig.screenHeight,
-              width: SizeConfig.screenWidth,
-              child: Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisSize: MainAxisSize.max,
-                  children: <Widget>[
-                    Spacing.empty(),
-                    AnimatedContainer(
-                        curve: Curves.decelerate,
-                        duration: const Duration(seconds: 3),
-                        child: SvgPicture.asset(
-                            AppImages.appLogoWhite) //Image.asset(assetName),
-                        ),
-                  ],
-                ),
-              ))),
+        height: SizeConfig.screenHeight,
+        width: SizeConfig.screenWidth,
+
+        // Spacing.empty(),
+        child: Center(
+          child: AnimatedContainer(
+              curve: Curves.decelerate,
+              duration: const Duration(seconds: 3),
+              child:
+                  SvgPicture.asset(AppImages.appIcon) //Image.asset(assetName),
+              ),
+        ),
+      )),
     );
   }
 }

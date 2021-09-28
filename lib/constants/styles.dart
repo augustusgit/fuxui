@@ -1,3 +1,4 @@
+import 'package:WurkFux/constants/strings.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -50,5 +51,13 @@ class AppStyles {
     fontWeight: FontWeight.w700,
     fontSize: 15,
     color: AppColors.onPrimaryColor,
+  );
+
+  static const bottomBarStyle = TextStyle(
+    fontWeight: FontWeight.w400,
+    fontFamily: AppStrings.poppinsFont,
+    fontStyle: FontStyle.normal,
+    fontSize: 15.0,
+    color: AppColors.textColorPrimary,
   );
 }

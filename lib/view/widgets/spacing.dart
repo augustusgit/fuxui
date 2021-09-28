@@ -1,3 +1,4 @@
+import 'package:WurkFux/view/utilities/size_config.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -16,6 +17,8 @@ class Spacing extends StatelessWidget {
   Spacing.bigHeight() : this.height(24);
 
   Spacing.largeHeight() : this.height(32);
+
+  Spacing.extraLargHeight() : this.height(getProportionateScreenHeight(80));
 
   Spacing.width(this.width) : height = 0;
 
