@@ -1,6 +1,6 @@
 import 'package:WurkFux/constants/colors.dart';
 import 'package:WurkFux/constants/styles.dart';
-import 'package:WurkFux/view/widgets/custom_animated_bottom_bar.dart';
+import 'package:WurkFux/view/widgets/custom_bottom_nav_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

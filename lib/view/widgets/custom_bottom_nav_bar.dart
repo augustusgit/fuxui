@@ -41,9 +41,9 @@ class FloatingBottomBar extends StatelessWidget {
       duration: Duration(milliseconds: 300),
       height: containerHeight,
       margin: EdgeInsets.only(
-        right: getProportionateScreenHeight(70),
-        left: getProportionateScreenWidth(70),
-        bottom: getProportionateScreenWidth(25),
+        right: getProportionateScreenHeight(75.0),
+        left: getProportionateScreenWidth(75.0),
+        bottom: getProportionateScreenWidth(16.0),
       ),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(19.0),
@@ -51,8 +51,8 @@ class FloatingBottomBar extends StatelessWidget {
         boxShadow: [
           BoxShadow(
             color: AppColors.lightGrey,
-            blurRadius: 2.0,
-            spreadRadius: 0.0,
+            blurRadius: 3.0,
+            spreadRadius: 2.0,
             offset: Offset(-4.0, 4.0), // shadow direction: bottom right
           )
         ],
