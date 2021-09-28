@@ -58,4 +58,6 @@ class AppStrings {
 
   static const TimelineHead = 'Timeline';
   static const TimelineChild = 'Here\'s an overview of your previous orders';
+
+  static const MessagesHome = 'Messages';
 }

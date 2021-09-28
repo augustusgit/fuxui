@@ -108,76 +108,77 @@ class Timeline extends StatelessWidget {
           scrollDirection: Axis.vertical,
           itemCount: histories.length,
           itemBuilder: (_, index) => Container(
-              margin: const EdgeInsets.only(top: 16),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        histories[index].orderTitle,
-                        style: TextStyle(
-                          fontFamily: AppStrings.poppinsFont,
-                          fontStyle: FontStyle.normal,
-                          fontWeight: FontWeight.w500,
-                          color: AppColors.textColorPrimary,
-                          fontSize: 14.0,
-                        ),
+            margin: const EdgeInsets.only(top: 16),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      histories[index].orderTitle,
+                      style: TextStyle(
+                        fontFamily: AppStrings.poppinsFont,
+                        fontStyle: FontStyle.normal,
+                        fontWeight: FontWeight.w500,
+                        color: AppColors.textColorPrimary,
+                        fontSize: 14.0,
                       ),
-                      Text(
-                        histories[index].orderSub,
-                        style: TextStyle(
-                          fontFamily: AppStrings.poppinsFont,
-                          fontStyle: FontStyle.normal,
-                          fontWeight: FontWeight.w500,
-                          color: AppColors.textColorPrimary,
-                          fontSize: 12.0,
-                        ),
+                    ),
+                    Text(
+                      histories[index].orderSub,
+                      style: TextStyle(
+                        fontFamily: AppStrings.poppinsFont,
+                        fontStyle: FontStyle.normal,
+                        fontWeight: FontWeight.w500,
+                        color: AppColors.textColorPrimary,
+                        fontSize: 12.0,
                       ),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      Text(
-                        histories[index].orderStatus.name.toUpperCase(),
-                        style: TextStyle(
-                          color: _calculateColor(histories[index].orderStatus),
-                          fontStyle: FontStyle.normal,
-                          fontWeight: FontWeight.w500,
-                          fontFamily: AppStrings.poppinsFont,
-                          fontSize: 12.0,
-                        ),
+                    ),
+                  ],
+                ),
+                Row(
+                  children: [
+                    Text(
+                      histories[index].orderStatus.name.toUpperCase(),
+                      style: TextStyle(
+                        color: _calculateColor(histories[index].orderStatus),
+                        fontStyle: FontStyle.normal,
+                        fontWeight: FontWeight.w500,
+                        fontFamily: AppStrings.poppinsFont,
+                        fontSize: 12.0,
                       ),
-                      Spacing.bigWidth(),
-                      RichText(
-                        text: TextSpan(children: [
-                          TextSpan(
-                            text: "\$",
-                            style: TextStyle(
-                              color: AppColors.textColorPrimary,
-                              fontFamily: AppStrings.poppinsFont,
-                              fontWeight: FontWeight.w700,
-                              fontStyle: FontStyle.normal,
-                              fontSize: 12.0,
-                            ),
+                    ),
+                    Spacing.bigWidth(),
+                    RichText(
+                      text: TextSpan(children: [
+                        TextSpan(
+                          text: "\$",
+                          style: TextStyle(
+                            color: AppColors.textColorPrimary,
+                            fontFamily: AppStrings.poppinsFont,
+                            fontWeight: FontWeight.w700,
+                            fontStyle: FontStyle.normal,
+                            fontSize: 12.0,
                           ),
-                          TextSpan(
-                            text: histories[index].price,
-                            style: TextStyle(
-                              color: AppColors.textColorPrimary,
-                              fontFamily: AppStrings.poppinsFont,
-                              fontWeight: FontWeight.w700,
-                              fontStyle: FontStyle.normal,
-                              fontSize: 14.0,
-                            ),
+                        ),
+                        TextSpan(
+                          text: histories[index].price,
+                          style: TextStyle(
+                            color: AppColors.textColorPrimary,
+                            fontFamily: AppStrings.poppinsFont,
+                            fontWeight: FontWeight.w700,
+                            fontStyle: FontStyle.normal,
+                            fontSize: 14.0,
                           ),
-                        ]),
-                      ),
-                    ],
-                  )
-                ],
-              )),
+                        ),
+                      ]),
+                    ),
+                  ],
+                )
+              ],
+            ),
+          ),
         ),
       ],
     );

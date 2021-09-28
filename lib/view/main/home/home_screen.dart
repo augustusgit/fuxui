@@ -30,14 +30,14 @@ class _Home extends State<HomeScreen> {
               child: Text(
                 AppStrings.WelcomeHome,
                 style: TextStyle(
-                  fontSize: 20.0,
+                  fontSize: 24.0,
                   fontFamily: AppStrings.poppinsFont,
                   fontStyle: FontStyle.normal,
                   fontWeight: FontWeight.w400,
                 ),
               ),
             ),
-            Spacing.largeHeight(),
+            Spacing.bigHeight(),
             _orderSummaryContainer('20,000'),
             Spacing.bigHeight(),
             OrdersRow(),
