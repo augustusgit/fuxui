@@ -43,4 +43,12 @@ class AppColors {
     begin: Alignment.topCenter,
     end: Alignment.bottomCenter,
   );
+
+  // Shadows
+  static const shadow2 = BoxShadow(
+    color: Color(0x09004AC2),
+    spreadRadius: 10,
+    blurRadius: 20,
+    offset: Offset(4, 4),
+  );
 }

@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:wurkfux/constants/colors.dart';
 import 'package:wurkfux/constants/styles.dart';
+import 'package:wurkfux/view/main/home/home_screen.dart';
 import 'package:wurkfux/view/widgets/custom_bottom_nav_bar.dart';
 import 'package:wurkfux/view/wurk_fux_icons.dart';
 
@@ -94,12 +95,7 @@ class _Dashboard extends State<Dashboard> {
 
   Widget _getBody() {
     List<Widget> pages = [
-      Container(
-        height: double.infinity,
-        width: double.infinity,
-        color: Colors.red,
-        child: Text('ABS1'),
-      ),
+      HomeScreen(),
       Container(
         child: Text('ABS2'),
       ),
