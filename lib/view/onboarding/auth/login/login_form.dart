@@ -1,8 +1,8 @@
-import 'package:WurkFux/constants/images.dart';
-import 'package:WurkFux/constants/strings.dart';
-import 'package:WurkFux/view/widgets/spacing.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:wurkfux/constants/images.dart';
+import 'package:wurkfux/constants/strings.dart';
+import 'package:wurkfux/view/widgets/spacing.dart';
 
 class LoginForm extends StatelessWidget {
   const LoginForm({Key? key}) : super(key: key);

@@ -1,8 +1,8 @@
-import 'package:WurkFux/constants/colors.dart';
-import 'package:WurkFux/constants/strings.dart';
-import 'package:WurkFux/view/utilities/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:wurkfux/constants/colors.dart';
+import 'package:wurkfux/constants/strings.dart';
+import 'package:wurkfux/view/utilities/size_config.dart';
 
 class FloatingBottomBar extends StatelessWidget {
   FloatingBottomBar({
@@ -61,7 +61,7 @@ class FloatingBottomBar extends StatelessWidget {
       child: SizedBox(
         child: Container(
           height: containerHeight,
-          padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 6),
+          padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 6.0),
           child: Row(
             mainAxisAlignment: mainAxisAlignment,
             children: items.map((item) {
@@ -109,7 +109,7 @@ class _ItemWidget extends StatelessWidget {
       container: true,
       selected: isSelected,
       child: AnimatedContainer(
-        width: isSelected ? 80 : 36,
+        width: isSelected ? 100 : 36,
         height: kBottomNavigationBarHeight,
         duration: animationDuration,
         curve: curve,
@@ -125,10 +125,10 @@ class _ItemWidget extends StatelessWidget {
           scrollDirection: Axis.horizontal,
           physics: NeverScrollableScrollPhysics(),
           child: Container(
-            width: isSelected ? 80 : 36,
+            width: isSelected ? 100 : 36,
             height: kBottomNavigationBarHeight,
             padding:
-                EdgeInsets.only(left: 8.0, top: 4.0, bottom: 4.0, right: 8.0),
+                EdgeInsets.only(left: 8.0, top: 4.0, bottom: 4.0, right: 4.0),
             child: Row(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.center,

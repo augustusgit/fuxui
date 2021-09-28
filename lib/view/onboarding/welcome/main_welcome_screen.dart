@@ -1,7 +1,7 @@
-import 'package:WurkFux/constants/colors.dart';
-import 'package:WurkFux/constants/strings.dart';
-import 'package:WurkFux/view/utilities/size_config.dart';
 import 'package:flutter/material.dart';
+import 'package:wurkfux/constants/colors.dart';
+import 'package:wurkfux/constants/strings.dart';
+import 'package:wurkfux/view/utilities/size_config.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({Key? key}) : super(key: key);

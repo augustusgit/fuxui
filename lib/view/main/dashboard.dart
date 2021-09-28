@@ -1,8 +1,9 @@
-import 'package:WurkFux/constants/colors.dart';
-import 'package:WurkFux/constants/styles.dart';
-import 'package:WurkFux/view/widgets/custom_bottom_nav_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:wurkfux/constants/colors.dart';
+import 'package:wurkfux/constants/styles.dart';
+import 'package:wurkfux/view/widgets/custom_bottom_nav_bar.dart';
+import 'package:wurkfux/view/wurk_fux_icons.dart';
 
 class Dashboard extends StatefulWidget {
   @override
@@ -48,9 +49,9 @@ class _Dashboard extends State<Dashboard> {
       onItemSelected: (index) => setState(() => _currentIndex = index),
       items: <BottomNavyBarItem>[
         BottomNavyBarItem(
-          icon: Icon(Icons.home),
+          icon: Icon(WurkFuxIcons.bar_chart_square),
           title: Text(
-            'Blog',
+            'Home',
             style: AppStyles.bottomBarStyle,
           ),
           activeColor: AppColors.black,
@@ -58,9 +59,9 @@ class _Dashboard extends State<Dashboard> {
           textAlign: TextAlign.center,
         ),
         BottomNavyBarItem(
-          icon: Icon(Icons.home),
+          icon: Icon(WurkFuxIcons.mail),
           title: Text(
-            'Blog',
+            'InMail',
             style: AppStyles.bottomBarStyle,
           ),
           activeColor: AppColors.black,
@@ -68,9 +69,9 @@ class _Dashboard extends State<Dashboard> {
           textAlign: TextAlign.center,
         ),
         BottomNavyBarItem(
-          icon: Icon(Icons.home),
+          icon: Icon(WurkFuxIcons.orders),
           title: Text(
-            'Blog',
+            'Services',
             style: AppStyles.bottomBarStyle,
           ),
           activeColor: AppColors.black,
@@ -78,9 +79,9 @@ class _Dashboard extends State<Dashboard> {
           textAlign: TextAlign.center,
         ),
         BottomNavyBarItem(
-          icon: Icon(Icons.home),
+          icon: Icon(WurkFuxIcons.user),
           title: Text(
-            'Blog',
+            'Profile',
             style: AppStyles.bottomBarStyle,
           ),
           activeColor: AppColors.black,

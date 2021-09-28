@@ -1,9 +1,9 @@
-import 'package:WurkFux/constants/colors.dart';
-import 'package:WurkFux/constants/strings.dart';
-import 'package:WurkFux/view/utilities/size_config.dart';
-import 'package:WurkFux/view/widgets/spacing.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:wurkfux/constants/colors.dart';
+import 'package:wurkfux/constants/strings.dart';
+import 'package:wurkfux/view/utilities/size_config.dart';
+import 'package:wurkfux/view/widgets/spacing.dart';
 
 import 'login_form.dart';
 

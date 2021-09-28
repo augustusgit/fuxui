@@ -1,10 +1,10 @@
-import 'package:WurkFux/constants/colors.dart';
-import 'package:WurkFux/constants/images.dart';
-import 'package:WurkFux/constants/strings.dart';
-import 'package:WurkFux/view/utilities/size_config.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:wurkfux/constants/colors.dart';
+import 'package:wurkfux/constants/images.dart';
+import 'package:wurkfux/constants/strings.dart';
+import 'package:wurkfux/view/utilities/size_config.dart';
 
 class Splash extends StatefulWidget {
   const Splash({Key? key}) : super(key: key);

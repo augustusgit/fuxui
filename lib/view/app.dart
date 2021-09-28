@@ -1,9 +1,9 @@
-import 'package:WurkFux/constants/colors.dart';
-import 'package:WurkFux/constants/strings.dart';
-import 'package:WurkFux/view/main/dashboard.dart';
-import 'package:WurkFux/view/onboarding/splash.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:wurkfux/constants/colors.dart';
+import 'package:wurkfux/constants/strings.dart';
+import 'package:wurkfux/view/main/dashboard.dart';
+import 'package:wurkfux/view/onboarding/splash.dart';
 
 import 'onboarding/auth/login/login_screen.dart';
 import 'onboarding/auth/signup/sign_up_screen.dart';

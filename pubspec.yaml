@@ -1,4 +1,4 @@
-name: WurkFux
+name: wurkfux
 description: Your Personal Virtaul Assistant
 
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
@@ -51,4 +51,8 @@ flutter:
           weight: 800
         - asset: assets/fonts/PoppinsBlack.ttf
           weight: 900
+
+    - family: WurkFuxIcons
+      fonts:
+        - asset: assets/fonts/WurkFuxIcons.ttf
 

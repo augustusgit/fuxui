@@ -1,10 +1,10 @@
-import 'package:WurkFux/constants/colors.dart';
-import 'package:WurkFux/constants/strings.dart';
-import 'package:WurkFux/view/onboarding/auth/signup/sign_up_form.dart';
-import 'package:WurkFux/view/utilities/size_config.dart';
-import 'package:WurkFux/view/widgets/spacing.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:wurkfux/constants/colors.dart';
+import 'package:wurkfux/constants/strings.dart';
+import 'package:wurkfux/view/onboarding/auth/signup/sign_up_form.dart';
+import 'package:wurkfux/view/utilities/size_config.dart';
+import 'package:wurkfux/view/widgets/spacing.dart';
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({Key? key}) : super(key: key);
