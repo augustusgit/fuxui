@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:wurkfux/constants/colors.dart';
+import 'package:wurkfux/constants/images.dart';
 import 'package:wurkfux/constants/strings.dart';
 import 'package:wurkfux/view/utilities/size_config.dart';
 import 'package:wurkfux/view/widgets/spacing.dart';
@@ -38,7 +39,7 @@ class LoginScreen extends StatelessWidget {
                 Navigator.pop(context);
               },
               icon: SvgPicture.asset(
-                "assets/svgs/short_arrow_left.svg",
+                AppImages.shortArrowLeft,
               ),
             ),
           ),

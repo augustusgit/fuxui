@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:wurkfux/constants/colors.dart';
 import 'package:wurkfux/constants/images.dart';
 import 'package:wurkfux/constants/strings.dart';
+import 'package:wurkfux/view/main/payment/payment_success.dart';
 import 'package:wurkfux/view/widgets/spacing.dart';
 import 'package:wurkfux/view/wurk_fux_icons.dart';
 
@@ -39,10 +40,11 @@ class _UserProfile extends State<Profile> {
             ),
             Spacing.largeHeight(),
             ProfileHeader(
-                userImageUrl: AppImages.personPlaceholder3,
-                userName: 'Desmond Chidi',
-                userEmail: 'desmond.chidi@outlook.com'
-                    '.com'),
+              userImageUrl: AppImages.personPlaceholder3,
+              userName: 'Desmond Chidi',
+              userEmail: 'desmond.chidi@outlook.com',
+              onClick: _launchEditProfileSheet,
+            ),
             Spacing.largeHeight(),
             GroupHeader(
               text: AppStrings.MeLabel,
@@ -85,6 +87,21 @@ class _UserProfile extends State<Profile> {
       ),
     );
   }
+
+  void _launchEditProfileSheet() {
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      backgroundColor: Color.fromRGBO(245, 245, 245, 1),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.only(
+            topRight: Radius.circular(30.0), topLeft: Radius.circular(30.0)),
+      ),
+      builder: (BuildContext context) {
+        return PaymentFeedback();
+      },
+    );
+  }
 }
 
 class GroupHeader extends StatelessWidget {
@@ -112,12 +129,13 @@ class ProfileHeader extends StatelessWidget {
   final String userImageUrl;
   final String userName;
   final String userEmail;
+  final VoidCallback onClick;
 
-  const ProfileHeader({
-    required this.userImageUrl,
-    required this.userName,
-    required this.userEmail,
-  });
+  const ProfileHeader(
+      {required this.userImageUrl,
+      required this.userName,
+      required this.userEmail,
+      required this.onClick});
 
   @override
   Widget build(BuildContext context) {
@@ -163,7 +181,7 @@ class ProfileHeader extends StatelessWidget {
                   color: AppColors.textColorPrimary),
             ),
             TextButton(
-              onPressed: () {},
+              onPressed: onClick,
               child: Text(
                 AppStrings.EditProfileText,
                 style: TextStyle(

@@ -71,4 +71,8 @@ class AppStrings {
   static const Terms = 'Terms of Service';
   static const PP = 'Privacy Policy';
   static const Licenses = 'Licenses';
+
+  static const PaymentSuccess = 'Payment\nSuccessful';
+  static const PaymentVerified = 'Your payment has been verified!';
+  static const FinishText = 'Finish';
 }
