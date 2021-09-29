@@ -72,14 +72,18 @@ class _OtpFormState extends State<OtpForm> {
       width: getProportionateScreenWidth(54.0),
       child: TextFormField(
         decoration: InputDecoration(
+          border: InputBorder.none,
           hintText: '-',
-          contentPadding:
-              EdgeInsets.only(top: getProportionateScreenHeight(15)),
+          contentPadding: EdgeInsets.only(
+            top: getProportionateScreenHeight(15),
+          ),
         ),
         autofocus: true,
         style: TextStyle(
-            fontSize: getProportionatefontSize(24.0),
-            fontWeight: FontWeight.w400),
+          fontSize: getProportionatefontSize(24.0),
+          fontWeight: FontWeight.w400,
+          decoration: null,
+        ),
         keyboardType: TextInputType.number,
         textAlign: TextAlign.center,
         onChanged: (value) {

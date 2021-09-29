@@ -89,9 +89,14 @@ class SignInBody extends StatelessWidget {
             ],
           ),
           Spacing.bigHeight(),
-          Text(
-            AppStrings.Forgot,
-            style: TextStyle(fontSize: 12.0, fontWeight: FontWeight.w600),
+          TextButton(
+            onPressed: () {
+              Navigator.pushNamed(context, AppStrings.ForgotPasswordRoute);
+            },
+            child: Text(
+              AppStrings.Forgot,
+              style: TextStyle(fontSize: 12.0, fontWeight: FontWeight.w600),
+            ),
           ),
           SizedBox(
             height: getProportionateScreenHeight(80),
@@ -104,7 +109,9 @@ class SignInBody extends StatelessWidget {
                   height: getProportionateScreenHeight(52),
                   width: getProportionateScreenWidth(302),
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      _goToDashboard(context);
+                    },
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -116,7 +123,7 @@ class SignInBody extends StatelessWidget {
                               fontWeight: FontWeight.w600),
                         ),
                         Spacing.mediumWidth(),
-                        SvgPicture.asset("assets/svgs/short_arrow_right.svg")
+                        SvgPicture.asset(AppImages.shortArrowRight)
                       ],
                     ),
                     style: ButtonStyle(
@@ -139,8 +146,10 @@ class SignInBody extends StatelessWidget {
                     height: getProportionateScreenHeight(52),
                     width: getProportionateScreenWidth(302),
                     child: TextButton.icon(
-                      icon: SvgPicture.asset("assets/svgs/google.svg"),
-                      onPressed: () {},
+                      icon: SvgPicture.asset(AppImages.google),
+                      onPressed: () {
+                        _goToDashboard(context);
+                      },
                       label: Text(
                         AppStrings.WithGoogle,
                         style: TextStyle(
@@ -164,5 +173,10 @@ class SignInBody extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  void _goToDashboard(BuildContext context) {
+    Navigator.pushNamedAndRemoveUntil(
+        context, AppStrings.DashboardRoute, (Route<dynamic> route) => false);
   }
 }

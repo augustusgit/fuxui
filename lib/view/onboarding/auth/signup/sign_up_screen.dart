@@ -78,7 +78,7 @@ class SignUpBody extends StatelessWidget {
                 child: IconButton(
                   onPressed: () {},
                   icon: SvgPicture.asset(
-                    "assets/svgs/tick_good.svg",
+                    AppImages.tickGood,
                     fit: BoxFit.fill,
                   ),
                 ),
@@ -96,7 +96,10 @@ class SignUpBody extends StatelessWidget {
                   height: getProportionateScreenHeight(52),
                   width: getProportionateScreenWidth(302),
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(
+                          context, AppStrings.EmailVerificationRoute);
+                    },
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -108,7 +111,7 @@ class SignUpBody extends StatelessWidget {
                               fontWeight: FontWeight.w600),
                         ),
                         Spacing.mediumWidth(),
-                        SvgPicture.asset("assets/svgs/short_arrow_right.svg")
+                        SvgPicture.asset(AppImages.shortArrowRight)
                       ],
                     ),
                     style: ButtonStyle(
@@ -131,8 +134,10 @@ class SignUpBody extends StatelessWidget {
                     height: getProportionateScreenHeight(52),
                     width: getProportionateScreenWidth(302),
                     child: TextButton.icon(
-                      icon: SvgPicture.asset("assets/svgs/google.svg"),
-                      onPressed: () {},
+                      icon: SvgPicture.asset(AppImages.google),
+                      onPressed: () {
+                        _goToDashboard(context);
+                      },
                       label: Text(
                         AppStrings.WithGoogle,
                         style: TextStyle(
@@ -156,5 +161,10 @@ class SignUpBody extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  void _goToDashboard(BuildContext context) {
+    Navigator.pushNamedAndRemoveUntil(
+        context, AppStrings.DashboardRoute, (Route<dynamic> route) => false);
   }
 }

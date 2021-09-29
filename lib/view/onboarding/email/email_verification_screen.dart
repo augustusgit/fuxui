@@ -59,7 +59,12 @@ class EmailVerificationBody extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  continueButton(() {}),
+                  continueButton(() {
+                    Navigator.pushNamedAndRemoveUntil(
+                        context,
+                        AppStrings.DashboardRoute,
+                        (Route<dynamic> route) => false);
+                  }),
                 ],
               ),
             ),

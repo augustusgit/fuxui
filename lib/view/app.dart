@@ -4,6 +4,7 @@ import 'package:wurkfux/constants/colors.dart';
 import 'package:wurkfux/constants/strings.dart';
 import 'package:wurkfux/view/main/dashboard.dart';
 import 'package:wurkfux/view/onboarding/splash.dart';
+import 'package:wurkfux/view/onboarding/welcome/main_welcome_screen.dart';
 
 import 'onboarding/auth/login/login_screen.dart';
 import 'onboarding/auth/signup/sign_up_screen.dart';
@@ -31,7 +32,7 @@ class App extends StatelessWidget {
         case AppStrings.WelcomeRoute:
           // Correct Place for this Statement
           //final arguments = settings.arguments as Map<String, dynamic>;
-          screen = Dashboard();
+          screen = WelcomeScreen();
           break;
         case AppStrings.LoginRoute:
           screen = LoginScreen();
@@ -44,6 +45,9 @@ class App extends StatelessWidget {
           break;
         case AppStrings.EmailVerificationRoute:
           screen = EmailVerificationScreen();
+          break;
+        case AppStrings.DashboardRoute:
+          screen = Dashboard();
           break;
         default:
           return null;
