@@ -5,6 +5,7 @@ import 'package:wurkfux/constants/styles.dart';
 import 'package:wurkfux/view/main/chat/messages.dart';
 import 'package:wurkfux/view/main/home/home_screen.dart';
 import 'package:wurkfux/view/main/profile/user_profile.dart';
+import 'package:wurkfux/view/main/services/services_screen.dart';
 import 'package:wurkfux/view/widgets/custom_bottom_nav_bar.dart';
 import 'package:wurkfux/view/wurk_fux_icons.dart';
 
@@ -99,9 +100,7 @@ class _Dashboard extends State<Dashboard> {
     List<Widget> pages = [
       HomeScreen(),
       MessagesScreen(),
-      Container(
-        child: Text('ABS3'),
-      ),
+      ServicesScreen(),
       Profile(),
     ];
     return IndexedStack(

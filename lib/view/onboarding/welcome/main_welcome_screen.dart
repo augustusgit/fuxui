@@ -52,7 +52,7 @@ class WelcomeBody extends StatelessWidget {
                       fontSize: 16,
                     ),
                     children: [
-                      TextSpan(text: "Virtual Services\n"),
+                      TextSpan(text: "Virtual Assistant\n"),
                       TextSpan(text: "On-Demand"),
                     ]),
               ),
