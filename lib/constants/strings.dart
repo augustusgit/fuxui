@@ -34,6 +34,10 @@ class AppStrings {
   static const PasswordHint = 'Password';
   static const UserNameHint = 'Username';
   static const PhoneHint = 'Phone Number';
+  static const FullNameHint = 'Full Name';
+  static const GenderHint = 'Gender';
+  static const CountryHint = 'Country';
+  static const DOBHint = 'Date of Birth';
   static const Phone = 'Phone';
   static const Remember = 'Remember me next time';
   static const Forgot = 'Forgot password?';
@@ -79,4 +83,6 @@ class AppStrings {
   static const PaymentSuccess = 'Payment\nSuccessful';
   static const PaymentVerified = 'Your payment has been verified!';
   static const FinishText = 'Finish';
+
+  static const ApplyText = 'Apply Changes';
 }

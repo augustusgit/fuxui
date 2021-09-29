@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:wurkfux/constants/colors.dart';
 import 'package:wurkfux/constants/images.dart';
 import 'package:wurkfux/constants/strings.dart';
-import 'package:wurkfux/view/main/payment/payment_success.dart';
+import 'package:wurkfux/view/main/profile/edit_profile_sheet.dart';
 import 'package:wurkfux/view/widgets/spacing.dart';
 import 'package:wurkfux/view/wurk_fux_icons.dart';
 
@@ -98,7 +98,7 @@ class _UserProfile extends State<Profile> {
             topRight: Radius.circular(30.0), topLeft: Radius.circular(30.0)),
       ),
       builder: (BuildContext context) {
-        return PaymentFeedback();
+        return EditUserProfile();
       },
     );
   }
