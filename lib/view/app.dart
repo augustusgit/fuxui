@@ -7,6 +7,8 @@ import 'package:wurkfux/view/onboarding/splash.dart';
 
 import 'onboarding/auth/login/login_screen.dart';
 import 'onboarding/auth/signup/sign_up_screen.dart';
+import 'onboarding/email/email_verification_screen.dart';
+import 'onboarding/forgot_pass/forgot_password.dart';
 
 class App extends StatelessWidget {
   @override
@@ -36,6 +38,12 @@ class App extends StatelessWidget {
           break;
         case AppStrings.SignUpRoute:
           screen = SignUpScreen();
+          break;
+        case AppStrings.ForgotPasswordRoute:
+          screen = ForgotPasswordScreen();
+          break;
+        case AppStrings.EmailVerificationRoute:
+          screen = EmailVerificationScreen();
           break;
         default:
           return null;

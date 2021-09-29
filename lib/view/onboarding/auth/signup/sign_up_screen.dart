@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:wurkfux/constants/colors.dart';
+import 'package:wurkfux/constants/images.dart';
 import 'package:wurkfux/constants/strings.dart';
 import 'package:wurkfux/view/onboarding/auth/signup/sign_up_form.dart';
 import 'package:wurkfux/view/utilities/size_config.dart';
@@ -12,13 +13,13 @@ class SignUpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: buildAppBar(context),
+      appBar: buildAppBar(context, () => Navigator.pop(context)),
       body: SignUpBody(),
     );
   }
 }
 
-AppBar buildAppBar(BuildContext context) {
+AppBar buildAppBar(BuildContext context, Function backPressed) {
   return AppBar(
       backgroundColor: Colors.transparent,
       elevation: 0,
@@ -33,10 +34,10 @@ AppBar buildAppBar(BuildContext context) {
           ),
           child: IconButton(
             onPressed: () {
-              Navigator.pop(context);
+              backPressed();
             },
             icon: SvgPicture.asset(
-              "assets/svgs/short_arrow_left.svg",
+              AppImages.shortArrowLeft,
             ),
           ),
         ),

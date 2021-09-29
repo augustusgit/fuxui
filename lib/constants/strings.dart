@@ -45,6 +45,10 @@ class AppStrings {
   static const Logout = 'Logout';
   static const PhoneInstead = 'Use phone number instead';
 
+  static const EmailVerification = 'Email Verification';
+  static const EmailVerificationSub = 'enter the 6 digit code sent to you at ';
+  static const ResendCode = 'ResendCode';
+
   static const GetStarted = 'Let’s Get Started!';
   static const Agreement =
       'By signing up, you agree to the Terms of Service and Privacy Policy.';
