@@ -2,12 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:wurkfux/constants/colors.dart';
-import 'package:wurkfux/constants/images.dart';
-import 'package:wurkfux/constants/strings.dart';
 import 'package:wurkfux/view/utilities/size_config.dart';
-import 'package:wurkfux/view/widgets/spacing.dart';
 
-SizedBox continueButton(Function clicked) {
+SizedBox continueButton(
+    Function clicked, double spaceBeforeIcon, String buttonText) {
   return SizedBox(
     height: getProportionateScreenHeight(52),
     width: getProportionateScreenWidth(302),
@@ -19,14 +17,16 @@ SizedBox continueButton(Function clicked) {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            AppStrings.Continue,
+            buttonText,
             style: TextStyle(
                 color: AppColors.onPrimaryColor,
                 fontSize: 16,
                 fontWeight: FontWeight.w600),
           ),
-          Spacing.mediumWidth(),
-          SvgPicture.asset(AppImages.shortArrowRight)
+          SizedBox(
+            width: spaceBeforeIcon,
+          ),
+          SvgPicture.asset("assets/svgs/short_arrow_right.svg")
         ],
       ),
       style: ButtonStyle(

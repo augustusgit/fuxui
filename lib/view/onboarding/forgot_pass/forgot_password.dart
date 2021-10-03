@@ -54,9 +54,13 @@ class ForgotPasswordBody extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  continueButton(() {
-                    Navigator.pop(context);
-                  }),
+                  continueButton(
+                    () {
+                      Navigator.pop(context);
+                    },
+                    16.0,
+                    AppStrings.Continue,
+                  ),
                 ],
               ),
             ),

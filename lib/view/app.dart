@@ -3,13 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:wurkfux/constants/colors.dart';
 import 'package:wurkfux/constants/strings.dart';
 import 'package:wurkfux/view/main/dashboard.dart';
+import 'package:wurkfux/view/main/services/service_detail_screen.dart';
 import 'package:wurkfux/view/onboarding/splash.dart';
 import 'package:wurkfux/view/onboarding/welcome/main_welcome_screen.dart';
 
+import 'main/chat/chat_screen.dart';
 import 'onboarding/auth/login/login_screen.dart';
 import 'onboarding/auth/signup/sign_up_screen.dart';
 import 'onboarding/email/email_verification_screen.dart';
 import 'onboarding/forgot_pass/forgot_password.dart';
+import 'onboarding/onboarding_screen.dart';
 
 class App extends StatelessWidget {
   @override
@@ -28,6 +31,9 @@ class App extends StatelessWidget {
       switch (settings.name) {
         case AppStrings.SplashRoute:
           screen = Splash();
+          break;
+        case AppStrings.OnBoardingRoute:
+          screen = OnboardingScreen();
           break;
         case AppStrings.WelcomeRoute:
           // Correct Place for this Statement
@@ -48,6 +54,12 @@ class App extends StatelessWidget {
           break;
         case AppStrings.DashboardRoute:
           screen = Dashboard();
+          break;
+        case AppStrings.ServiceDetailsRoute:
+          screen = ServiceDetails();
+          break;
+        case AppStrings.MailChatRoute:
+          screen = ChatScreen();
           break;
         default:
           return null;

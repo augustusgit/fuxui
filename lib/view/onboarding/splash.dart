@@ -22,7 +22,7 @@ class _SplashScreenState extends State<Splash> {
 
   _navigateToHome() async {
     await Future.delayed(Duration(milliseconds: 200), () {});
-    Navigator.pushReplacementNamed(context, AppStrings.WelcomeRoute);
+    Navigator.pushReplacementNamed(context, AppStrings.OnBoardingRoute);
   }
 
   @override

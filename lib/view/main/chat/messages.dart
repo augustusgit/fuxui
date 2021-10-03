@@ -83,65 +83,70 @@ class Messages extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(top: 8.0, bottom: 8.0),
-      child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-        Row(
-          children: [
-            Container(
-              width: 50.0,
-              height: 50.0,
-              child: null,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: NetworkImage(userImageUrl),
-                  fit: BoxFit.cover,
-                ),
-                color: AppColors.green,
-                borderRadius: BorderRadius.all(
-                  Radius.circular(50.0),
-                ),
-              ),
-            ),
-            Spacing.smallWidth(),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
+        margin: const EdgeInsets.only(top: 8.0, bottom: 8.0),
+        child: InkWell(
+          onTap: () {
+            Navigator.pushNamed(context, AppStrings.MailChatRoute);
+          },
+          child:
+              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+            Row(
               children: [
-                Text(
-                  userName,
-                  style: TextStyle(
-                    fontFamily: AppStrings.poppinsFont,
-                    fontStyle: FontStyle.normal,
-                    fontWeight: FontWeight.w500,
-                    color: AppColors.textColorPrimary,
-                    fontSize: 18.0,
+                Container(
+                  width: 50.0,
+                  height: 50.0,
+                  child: null,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: NetworkImage(userImageUrl),
+                      fit: BoxFit.cover,
+                    ),
+                    color: AppColors.green,
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(50.0),
+                    ),
                   ),
                 ),
-                Text(
-                  lastMessage,
-                  style: TextStyle(
-                    fontFamily: AppStrings.poppinsFont,
-                    fontStyle: FontStyle.normal,
-                    fontWeight: FontWeight.w400,
-                    color: AppColors.textColorPrimary,
-                    fontSize: 14.0,
-                  ),
+                Spacing.smallWidth(),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      userName,
+                      style: TextStyle(
+                        fontFamily: AppStrings.poppinsFont,
+                        fontStyle: FontStyle.normal,
+                        fontWeight: FontWeight.w500,
+                        color: AppColors.textColorPrimary,
+                        fontSize: 18.0,
+                      ),
+                    ),
+                    Text(
+                      lastMessage,
+                      style: TextStyle(
+                        fontFamily: AppStrings.poppinsFont,
+                        fontStyle: FontStyle.normal,
+                        fontWeight: FontWeight.w400,
+                        color: AppColors.textColorPrimary,
+                        fontSize: 14.0,
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),
-          ],
-        ),
-        Text(
-          lastMessageTimeStamp,
-          style: TextStyle(
-            color: AppColors.grey,
-            fontStyle: FontStyle.normal,
-            fontWeight: FontWeight.w500,
-            fontFamily: AppStrings.poppinsFont,
-            fontSize: 14.0,
-          ),
-        ),
-      ]),
-    );
+            Text(
+              lastMessageTimeStamp,
+              style: TextStyle(
+                color: AppColors.grey,
+                fontStyle: FontStyle.normal,
+                fontWeight: FontWeight.w500,
+                fontFamily: AppStrings.poppinsFont,
+                fontSize: 14.0,
+              ),
+            ),
+          ]),
+        ));
   }
 }

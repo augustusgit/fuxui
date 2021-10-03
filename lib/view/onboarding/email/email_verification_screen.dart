@@ -64,7 +64,7 @@ class EmailVerificationBody extends StatelessWidget {
                         context,
                         AppStrings.DashboardRoute,
                         (Route<dynamic> route) => false);
-                  }),
+                  }, 16.0, AppStrings.Continue),
                 ],
               ),
             ),

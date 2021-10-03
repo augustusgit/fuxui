@@ -1,10 +1,3 @@
-import 'package:WurkFux/constants/colors.dart';
-import 'package:WurkFux/constants/images.dart';
-import 'package:WurkFux/constants/strings.dart';
-import 'package:WurkFux/constants/styles.dart';
-import 'package:WurkFux/view/onboarding/customWidgets/continue_button.dart';
-import 'package:WurkFux/view/utilities/size_config.dart';
-import 'package:WurkFux/view/widgets/spacing.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -112,7 +105,7 @@ class BottomDialogBackArrow extends StatelessWidget {
               Navigator.pop(context);
             },
             icon: SvgPicture.asset(
-              AppImages.smallLeftArrow,
+              AppImages.shortArrowLeft,
             ),
           ),
         ),

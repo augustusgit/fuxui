@@ -60,13 +60,27 @@ class _Services extends State<ServicesScreen> {
                 ),
               ),
             ),
-            ListView.builder(
+            Spacing.height(300),
+            Center(
+              child: Container(
+                child: Text(
+                  'Coming Soon',
+                  style: TextStyle(
+                    fontSize: 34.0,
+                    fontFamily: AppStrings.poppinsFont,
+                    fontStyle: FontStyle.normal,
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
+              ),
+            )
+            /* ListView.builder(
               shrinkWrap: true,
               physics: NeverScrollableScrollPhysics(),
               scrollDirection: Axis.vertical,
               itemCount: services.length,
               itemBuilder: (_, index) => services[index],
-            ),
+            ),*/
           ],
         ),
       ),

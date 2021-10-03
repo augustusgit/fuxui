@@ -37,6 +37,10 @@ class AppColors {
   static const verificationBoxBg = Color.fromRGBO(217, 217, 217, 1);
   static const chatNotifContainerBg = Color.fromRGBO(73, 73, 73, 1);
 
+  static const dotBlackColor = Color.fromRGBO(22, 22, 22, 1);
+  static const gigDescriptionText = Color(0xFF888888);
+  static const gigDescriptionContent = Color(0xFF1A2237);
+
   // Gradients
 
   static const backgroundGradient2 = LinearGradient(

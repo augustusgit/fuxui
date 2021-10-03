@@ -4,6 +4,7 @@ class AppStrings {
 
   // Onboarding Routes
   static const SplashRoute = '/';
+  static const OnBoardingRoute = '/onboarding';
   static const WelcomeRoute = '/welcome';
   static const LoginRoute = '/login';
   static const SignUpRoute = '/sign_up';
@@ -93,4 +94,10 @@ class AppStrings {
   static const Pricing = 'Pricing';
   static const GigContent =
       'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. ';
+
+  // OnBoarding Texts
+  static const OnBoardText1 = 'Do Better With One.';
+  static const OnBoardText2 = 'Scale Better With Two.';
+  static const OnBoardText3 = 'Three gets the job done.';
+  static const Next = 'Next';
 }
