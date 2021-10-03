@@ -16,9 +16,7 @@ class AppStrings {
   static const ServicesRoute = '/services';
   static const OrderHistoryRoute = '/history';
   static const MailChatRoute = '/chat';
-
-  // Gigs
-  static const ServiceDetailsRoute = '/gig_details';
+  static const ServiceDetailsRoute = '/service_details';
 
   // User profile
   static const ProfileRoute = '/profile';
@@ -85,4 +83,14 @@ class AppStrings {
   static const FinishText = 'Finish';
 
   static const ApplyText = 'Apply Changes';
+
+  static const TypeSomething = 'Type Something...';
+
+  // Services
+  static const ProceedToPay = 'Proceed to Payment';
+  static const Assignment = 'Assignment';
+  static const Description = 'Description';
+  static const Pricing = 'Pricing';
+  static const GigContent =
+      'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. ';
 }
