@@ -1,12 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:wurkfux/constants/colors.dart';
-import 'package:wurkfux/constants/styles.dart';
-import 'package:wurkfux/view/main/chat/messages.dart';
+import 'package:wurkfux/constants/strings.dart';
 import 'package:wurkfux/view/main/home/home_screen.dart';
 import 'package:wurkfux/view/main/profile/user_profile.dart';
-import 'package:wurkfux/view/main/services/services_screen.dart';
-import 'package:wurkfux/view/widgets/custom_bottom_nav_bar.dart';
 import 'package:wurkfux/view/wurk_fux_icons.dart';
 
 class Dashboard extends StatefulWidget {
@@ -20,87 +17,53 @@ class _Dashboard extends State<Dashboard> {
 
   @override
   Widget build(BuildContext context) {
-    return NotificationListener<ScrollUpdateNotification>(
-      child: Scaffold(
-        body: _getBody(),
-        extendBody: true,
-        bottomNavigationBar: _buildBottomBar(),
+    return Scaffold(
+      body: _getBody(),
+      bottomNavigationBar: _buildBottomBar(),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () {
+          Navigator.pushNamed(context, AppStrings.MessagesRoute);
+        },
+        icon: Icon(Icons.chat),
+        label: Text('Talk to an Agent'),
       ),
-      onNotification: (notification) {
-        if (notification.scrollDelta?.sign == 1) {
-          setState(() {
-            yTransValue = 100;
-          });
-        } else if (notification.scrollDelta?.sign == -1) {
-          setState(() {
-            yTransValue = 0;
-          });
-        }
-        return true;
-      },
     );
   }
 
   Widget _buildBottomBar() {
-    return FloatingBottomBar(
-      containerHeight: 60.0,
-      yTransValue: yTransValue,
-      backgroundColor: Colors.transparent,
-      selectedIndex: _currentIndex,
-      showElevation: true,
-      itemCornerRadius: 20.0,
-      curve: Curves.easeIn,
-      onItemSelected: (index) => setState(() => _currentIndex = index),
-      items: <BottomNavyBarItem>[
-        BottomNavyBarItem(
+    return BottomNavigationBar(
+      currentIndex: _currentIndex,
+      onTap: _onItemTapped,
+      selectedItemColor: AppColors.primaryColor,
+      unselectedItemColor: Colors.grey.shade600,
+      selectedLabelStyle: TextStyle(
+          fontWeight: FontWeight.w600, fontFamily: AppStrings.poppinsFont),
+      unselectedLabelStyle: TextStyle(
+          fontWeight: FontWeight.w600, fontFamily: AppStrings.poppinsFont),
+      type: BottomNavigationBarType.fixed,
+      backgroundColor: AppColors.backgroundColor,
+      items: const <BottomNavigationBarItem>[
+        BottomNavigationBarItem(
           icon: Icon(WurkFuxIcons.bar_chart_square),
-          title: Text(
-            'Home',
-            style: AppStyles.bottomBarStyle,
-          ),
-          activeColor: AppColors.black,
-          inactiveColor: AppColors.black,
-          textAlign: TextAlign.center,
+          label: "Home",
         ),
-        BottomNavyBarItem(
-          icon: Icon(WurkFuxIcons.mail),
-          title: Text(
-            'InMail',
-            style: AppStyles.bottomBarStyle,
-          ),
-          activeColor: AppColors.black,
-          inactiveColor: AppColors.black,
-          textAlign: TextAlign.center,
-        ),
-        BottomNavyBarItem(
-          icon: Icon(WurkFuxIcons.orders),
-          title: Text(
-            'Services',
-            style: AppStyles.bottomBarStyle,
-          ),
-          activeColor: AppColors.black,
-          inactiveColor: AppColors.black,
-          textAlign: TextAlign.center,
-        ),
-        BottomNavyBarItem(
+        BottomNavigationBarItem(
           icon: Icon(WurkFuxIcons.user),
-          title: Text(
-            'Profile',
-            style: AppStyles.bottomBarStyle,
-          ),
-          activeColor: AppColors.black,
-          inactiveColor: AppColors.black,
-          textAlign: TextAlign.center,
+          label: "Profile",
         ),
       ],
     );
   }
 
+  void _onItemTapped(int index) {
+    setState(() {
+      _currentIndex = index;
+    });
+  }
+
   Widget _getBody() {
     List<Widget> pages = [
       HomeScreen(),
-      MessagesScreen(),
-      ServicesScreen(),
       Profile(),
     ];
     return IndexedStack(

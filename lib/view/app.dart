@@ -2,8 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:wurkfux/constants/colors.dart';
 import 'package:wurkfux/constants/strings.dart';
+import 'package:wurkfux/view/main/chat/messages.dart';
 import 'package:wurkfux/view/main/dashboard.dart';
 import 'package:wurkfux/view/main/services/service_detail_screen.dart';
+import 'package:wurkfux/view/main/services/services_screen.dart';
 import 'package:wurkfux/view/onboarding/splash.dart';
 import 'package:wurkfux/view/onboarding/welcome/main_welcome_screen.dart';
 
@@ -55,8 +57,14 @@ class App extends StatelessWidget {
         case AppStrings.DashboardRoute:
           screen = Dashboard();
           break;
+        case AppStrings.ServicesRoute:
+          screen = ServicesScreen();
+          break;
         case AppStrings.ServiceDetailsRoute:
           screen = ServiceDetails();
+          break;
+        case AppStrings.MessagesRoute:
+          screen = MessagesScreen();
           break;
         case AppStrings.MailChatRoute:
           screen = ChatScreen();

@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:wurkfux/constants/colors.dart';
 import 'package:wurkfux/constants/images.dart';
 import 'package:wurkfux/constants/strings.dart';
+import 'package:wurkfux/view/utilities/size_config.dart';
 import 'package:wurkfux/view/widgets/spacing.dart';
 
 class MessagesScreen extends StatefulWidget {
@@ -32,33 +34,80 @@ class _Messages extends State<MessagesScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.only(left: 30.0, right: 30.0),
-        physics: BouncingScrollPhysics(),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Spacing.height(kToolbarHeight * 1.5),
-            Container(
-              child: Text(
-                AppStrings.MessagesHome,
-                style: TextStyle(
-                  fontSize: 24.0,
-                  fontFamily: AppStrings.poppinsFont,
-                  fontStyle: FontStyle.normal,
-                  fontWeight: FontWeight.w400,
+      appBar: createAppBar(
+        context,
+      ),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.only(left: 30.0, right: 30.0),
+          physics: BouncingScrollPhysics(),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              ListView.builder(
+                shrinkWrap: true,
+                physics: NeverScrollableScrollPhysics(),
+                scrollDirection: Axis.vertical,
+                itemCount: messages.length,
+                itemBuilder: (_, index) => messages[index],
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  AppBar createAppBar(BuildContext context) {
+    return AppBar(
+      elevation: 0,
+      automaticallyImplyLeading: false,
+      backgroundColor: Colors.white,
+      flexibleSpace: SafeArea(
+        child: Container(
+          padding: EdgeInsets.only(right: 16),
+          child: Row(
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.only(left: 12),
+                child: Container(
+                  height: getProportionateScreenHeight(45.0),
+                  width: getProportionateScreenWidth(45.0),
+                  decoration: BoxDecoration(
+                    color: AppColors.lightGrey,
+                    shape: BoxShape.circle,
+                  ),
+                  child: IconButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    icon: SvgPicture.asset(
+                      AppImages.shortArrowLeft,
+                    ),
+                  ),
                 ),
               ),
-            ),
-            ListView.builder(
-              shrinkWrap: true,
-              physics: NeverScrollableScrollPhysics(),
-              scrollDirection: Axis.vertical,
-              itemCount: messages.length,
-              itemBuilder: (_, index) => messages[index],
-            ),
-          ],
+              Spacing.mediumWidth(),
+              Expanded(
+                child: Container(
+                  child: Text(
+                    AppStrings.MessagesHome,
+                    style: TextStyle(
+                      fontSize: 24.0,
+                      fontFamily: AppStrings.poppinsFont,
+                      fontStyle: FontStyle.normal,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                ),
+              ),
+              /* Icon(
+              Icons.settings,
+              color: Colors.black54,
+            ),*/
+            ],
+          ),
         ),
       ),
     );

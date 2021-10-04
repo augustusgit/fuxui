@@ -16,73 +16,75 @@ class _UserProfile extends State<Profile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.only(
-          left: 30.0,
-          right: 30.0,
-        ),
-        physics: BouncingScrollPhysics(),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Spacing.height(kToolbarHeight * 1.5),
-            Container(
-              child: Text(
-                AppStrings.ProfileHome,
-                style: TextStyle(
-                  fontSize: 24.0,
-                  fontFamily: AppStrings.poppinsFont,
-                  fontStyle: FontStyle.normal,
-                  fontWeight: FontWeight.w400,
+      body: SafeArea(
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.only(
+            left: 30.0,
+            right: 30.0,
+          ),
+          physics: BouncingScrollPhysics(),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Spacing.height(kToolbarHeight),
+              Container(
+                child: Text(
+                  AppStrings.ProfileHome,
+                  style: TextStyle(
+                    fontSize: 24.0,
+                    fontFamily: AppStrings.poppinsFont,
+                    fontStyle: FontStyle.normal,
+                    fontWeight: FontWeight.w400,
+                  ),
                 ),
               ),
-            ),
-            Spacing.largeHeight(),
-            ProfileHeader(
-              userImageUrl: AppImages.personPlaceholder3,
-              userName: 'Desmond Chidi',
-              userEmail: 'desmond.chidi@outlook.com',
-              onClick: _launchEditProfileSheet,
-            ),
-            Spacing.largeHeight(),
-            GroupHeader(
-              text: AppStrings.MeLabel,
-            ),
-            ProfileOption(
-              option: AppStrings.ChangePass,
-              action: () {},
-              icon: WurkFuxIcons.password,
-            ),
-            Spacing.largeHeight(),
-            GroupHeader(
-              text: AppStrings.ApplicationLabel,
-            ),
-            ProfileOption(
-              option: AppStrings.Terms,
-              action: () {},
-              icon: WurkFuxIcons.flag_outline,
-            ),
-            ProfileOption(
-              option: AppStrings.PP,
-              action: () {},
-              icon: WurkFuxIcons.user_pin,
-            ),
-            ProfileOption(
-              option: AppStrings.Licenses,
-              action: () {},
-              icon: WurkFuxIcons.file_blank,
-            ),
-            Spacing.largeHeight(),
-            GroupHeader(
-              text: AppStrings.AccountLabel,
-            ),
-            ProfileOption(
-              option: AppStrings.Logout,
-              action: () {},
-              icon: WurkFuxIcons.log_out,
-            ),
-          ],
+              Spacing.largeHeight(),
+              ProfileHeader(
+                userImageUrl: AppImages.personPlaceholder3,
+                userName: 'Desmond Chidi',
+                userEmail: 'desmond.chidi@outlook.com',
+                onClick: _launchEditProfileSheet,
+              ),
+              Spacing.largeHeight(),
+              GroupHeader(
+                text: AppStrings.MeLabel,
+              ),
+              ProfileOption(
+                option: AppStrings.ChangePass,
+                action: () {},
+                icon: WurkFuxIcons.password,
+              ),
+              Spacing.largeHeight(),
+              GroupHeader(
+                text: AppStrings.ApplicationLabel,
+              ),
+              ProfileOption(
+                option: AppStrings.Terms,
+                action: () {},
+                icon: WurkFuxIcons.flag_outline,
+              ),
+              ProfileOption(
+                option: AppStrings.PP,
+                action: () {},
+                icon: WurkFuxIcons.user_pin,
+              ),
+              ProfileOption(
+                option: AppStrings.Licenses,
+                action: () {},
+                icon: WurkFuxIcons.file_blank,
+              ),
+              Spacing.largeHeight(),
+              GroupHeader(
+                text: AppStrings.AccountLabel,
+              ),
+              ProfileOption(
+                option: AppStrings.Logout,
+                action: () {},
+                icon: WurkFuxIcons.log_out,
+              ),
+            ],
+          ),
         ),
       ),
     );

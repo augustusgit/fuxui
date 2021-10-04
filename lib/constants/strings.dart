@@ -57,7 +57,7 @@ class AppStrings {
       'By signing up, you agree to the Terms of Service and Privacy Policy.';
   static const Home = 'Home';
   static const InMail = 'In Mail';
-  static const Services = 'Services';
+  static const Services = 'One-off Projects';
   static const Profile = 'Profile';
   static const WelcomeHome = 'Welcome';
   static const OrdersSum = 'Orders Summary';

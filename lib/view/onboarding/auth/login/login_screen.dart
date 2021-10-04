@@ -23,27 +23,28 @@ class LoginScreen extends StatelessWidget {
 
   AppBar buildAppBar(BuildContext context) {
     return AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        leading: Padding(
-          padding: const EdgeInsets.only(left: 22),
-          child: Container(
-            height: getProportionateScreenHeight(45.0),
-            width: getProportionateScreenWidth(45.0),
-            decoration: BoxDecoration(
-              color: AppColors.lightGrey,
-              shape: BoxShape.circle,
-            ),
-            child: IconButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              icon: SvgPicture.asset(
-                AppImages.shortArrowLeft,
-              ),
+      backgroundColor: Colors.transparent,
+      elevation: 0,
+      leading: Padding(
+        padding: const EdgeInsets.only(left: 22),
+        child: Container(
+          height: getProportionateScreenHeight(45.0),
+          width: getProportionateScreenWidth(45.0),
+          decoration: BoxDecoration(
+            color: AppColors.lightGrey,
+            shape: BoxShape.circle,
+          ),
+          child: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: SvgPicture.asset(
+              AppImages.shortArrowLeft,
             ),
           ),
-        ));
+        ),
+      ),
+    );
   }
 }
 

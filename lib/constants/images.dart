@@ -11,6 +11,10 @@ class AppImages {
   static const user = 'assets/svgs/user.svg';
   static const camera = 'assets/svgs/camera.svg';
 
+  static const orderSummaryBackground = 'assets/svgs/floating_cogs.svg';
+  static const virtualAssistant = 'assets/svgs/virtual.svg';
+  static const oneOffProject = 'assets/svgs/one_off_project.svg';
+
   static const personPlaceholder =
       'https://images.unsplash.com/photo-1614090965443-3df21c6906ec?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8YmVhdXRpZnVsJTIwZ2lybHN8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80';
   static const personPlaceholder2 = 'https://media.allure'
