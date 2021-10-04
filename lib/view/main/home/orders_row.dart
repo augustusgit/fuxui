@@ -5,6 +5,7 @@ import 'package:wurkfux/constants/strings.dart';
 import 'package:wurkfux/models/order_type.dart';
 import 'package:wurkfux/view/widgets/shadow_card.dart';
 import 'package:wurkfux/view/widgets/spacing.dart';
+import 'package:wurkfux/view/wurk_fux_icons.dart';
 
 class OrdersRow extends StatelessWidget {
   const OrdersRow({
@@ -24,12 +25,13 @@ class OrdersRow extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Container(
               child: RichText(
                 text: TextSpan(children: [
                   TextSpan(
-                    text: "${AppStrings.OrdersTitle}\n",
+                    text: "Order History\n",
                     style: TextStyle(
                       fontFamily: AppStrings.poppinsFont,
                       fontStyle: FontStyle.normal,
@@ -51,6 +53,14 @@ class OrdersRow extends StatelessWidget {
                 ]),
               ),
             ),
+            IconButton(
+              onPressed: () {},
+              icon: Icon(
+                WurkFuxIcons.short_right,
+                size: 14.0,
+                color: AppColors.black.withOpacity(0.5),
+              ),
+            )
           ],
         ),
         Spacing.mediumHeight(),

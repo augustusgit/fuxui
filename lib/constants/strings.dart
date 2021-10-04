@@ -62,7 +62,7 @@ class AppStrings {
   static const WelcomeHome = 'Welcome';
   static const OrdersSum = 'Orders Summary';
   static const OrdersTitle = 'Orders';
-  static const OrdersSubtitle = 'select orders to preview';
+  static const OrdersSubtitle = 'This a summary of all your orders';
 
   static const TimelineHead = 'Timeline';
   static const TimelineChild = 'Here\'s an overview of your previous orders';

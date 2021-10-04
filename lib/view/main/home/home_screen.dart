@@ -19,51 +19,54 @@ class HomeScreen extends StatefulWidget {
 class _Home extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
-          padding: const EdgeInsets.only(left: 30.0, right: 30.0),
-          physics: BouncingScrollPhysics(),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Spacing.height(kToolbarHeight),
-              Container(
-                child: Text(
-                  '${AppStrings.WelcomeHome} Sahm,',
-                  style: TextStyle(
-                    fontSize: 24.0,
-                    fontFamily: AppStrings.poppinsFont,
-                    fontStyle: FontStyle.normal,
-                    fontWeight: FontWeight.w600,
+            padding: const EdgeInsets.only(left: 30.0, right: 30.0),
+            physics: BouncingScrollPhysics(),
+            child: Container(
+              height: SizeConfig.screenHeight,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Spacing.height(kToolbarHeight),
+                  Container(
+                    child: Text(
+                      '${AppStrings.WelcomeHome} Sahm,',
+                      style: TextStyle(
+                        fontSize: 24.0,
+                        fontFamily: AppStrings.poppinsFont,
+                        fontStyle: FontStyle.normal,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
                   ),
-                ),
-              ),
-              Container(
-                child: Text(
-                  'How can we be of help today?',
-                  style: TextStyle(
-                    fontSize: 20.0,
-                    fontFamily: AppStrings.poppinsFont,
-                    fontStyle: FontStyle.normal,
-                    fontWeight: FontWeight.w300,
+                  Container(
+                    child: Text(
+                      'How can we be of help today?',
+                      style: TextStyle(
+                        fontSize: 20.0,
+                        fontFamily: AppStrings.poppinsFont,
+                        fontStyle: FontStyle.normal,
+                        fontWeight: FontWeight.w300,
+                      ),
+                    ),
                   ),
-                ),
+                  Spacing.bigHeight(),
+                  _orderSummaryContainer('20,000'),
+                  Spacing.bigHeight(),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [_oneOffProject(), _virtualAssistant()],
+                  ),
+                  Spacing.bigHeight(),
+                  OrdersRow(),
+                  Spacing.extraLargHeight(),
+                ],
               ),
-              Spacing.bigHeight(),
-              _orderSummaryContainer('20,000'),
-              Spacing.bigHeight(),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [_oneOffProject(), _virtualAssistant()],
-              ),
-              Spacing.bigHeight(),
-              OrdersRow(),
-              Spacing.bigHeight(),
-            ],
-          ),
-        ),
+            )),
       ),
     );
   }
