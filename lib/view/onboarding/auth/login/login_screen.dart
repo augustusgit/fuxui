@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:wurkfux/constants/colors.dart';
-import 'package:wurkfux/constants/images.dart';
 import 'package:wurkfux/constants/strings.dart';
 import 'package:wurkfux/view/utilities/size_config.dart';
+import 'package:wurkfux/view/widgets/continue_button.dart';
+import 'package:wurkfux/view/widgets/google_button.dart';
 import 'package:wurkfux/view/widgets/spacing.dart';
 
 import 'login_form.dart';
@@ -16,40 +17,42 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: buildAppBar(context),
-      body: SignInBody(),
+      appBar: buildAppBar(context, () {
+        Navigator.pop(context);
+      }),
+      body: LoginBody(),
     );
   }
 
-  AppBar buildAppBar(BuildContext context) {
+  AppBar buildAppBar(BuildContext context, Function backPressed) {
     return AppBar(
-      backgroundColor: Colors.transparent,
-      elevation: 0,
-      leading: Padding(
-        padding: const EdgeInsets.only(left: 22),
-        child: Container(
-          height: getProportionateScreenHeight(45.0),
-          width: getProportionateScreenWidth(45.0),
-          decoration: BoxDecoration(
-            color: AppColors.lightGrey,
-            shape: BoxShape.circle,
-          ),
-          child: IconButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            icon: SvgPicture.asset(
-              AppImages.shortArrowLeft,
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        leading: Padding(
+          padding: const EdgeInsets.only(left: 22),
+          child: Container(
+            height: getProportionateScreenHeight(45.0),
+            width: getProportionateScreenWidth(45.0),
+            decoration: BoxDecoration(
+              color: AppColors.lightGrey,
+              shape: BoxShape.circle,
+            ),
+            child: IconButton(
+              onPressed: () {
+                backPressed();
+              },
+              icon: SvgPicture.asset(
+                "assets/svgs/short_arrow_left.svg",
+              ),
             ),
           ),
-        ),
-      ),
-    );
+        ));
   }
 }
 
-class SignInBody extends StatelessWidget {
-  const SignInBody({Key? key}) : super(key: key);
+class LoginBody extends StatelessWidget {
+  // const SignUpBody({Key? key}) : super(key: key);
+  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -67,7 +70,9 @@ class SignInBody extends StatelessWidget {
           Spacing.smallHeight(),
           Text(AppStrings.WelcomeSub),
           Spacing.largeHeight(),
-          LoginForm(),
+          LoginForm(
+            formKey: _formKey,
+          ),
           Row(
             children: [
               Container(
@@ -90,8 +95,8 @@ class SignInBody extends StatelessWidget {
             ],
           ),
           Spacing.bigHeight(),
-          TextButton(
-            onPressed: () {
+          InkWell(
+            onTap: () {
               Navigator.pushNamed(context, AppStrings.ForgotPasswordRoute);
             },
             child: Text(
@@ -106,67 +111,21 @@ class SignInBody extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                SizedBox(
-                  height: getProportionateScreenHeight(52),
-                  width: getProportionateScreenWidth(302),
-                  child: ElevatedButton(
-                    onPressed: () {
-                      _goToDashboard(context);
-                    },
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          AppStrings.Login,
-                          style: TextStyle(
-                              color: AppColors.onPrimaryColor,
-                              fontSize: 16,
-                              fontWeight: FontWeight.w600),
-                        ),
-                        Spacing.mediumWidth(),
-                        SvgPicture.asset(AppImages.shortArrowRight)
-                      ],
-                    ),
-                    style: ButtonStyle(
-                        backgroundColor: MaterialStateColor.resolveWith(
-                            (states) => AppColors.primaryColor),
-                        shape: MaterialStateProperty.resolveWith((states) =>
-                            RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(30)))),
-                  ),
-                ),
+                continueButton(() {
+                  if (_formKey.currentState!.validate()) {
+                    //Login here
+                  }
+                }, 16.0, AppStrings.Continue),
                 SizedBox(
                   height: getProportionateScreenHeight(23.0),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(bottom: 43),
-                  child: Container(
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(30),
-                        border: Border.all(color: AppColors.grey)),
-                    height: getProportionateScreenHeight(52),
-                    width: getProportionateScreenWidth(302),
-                    child: TextButton.icon(
-                      icon: SvgPicture.asset(AppImages.google),
-                      onPressed: () {
-                        _goToDashboard(context);
-                      },
-                      label: Text(
-                        AppStrings.WithGoogle,
-                        style: TextStyle(
-                            color: AppColors.black,
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600),
-                      ),
-                      style: ButtonStyle(
-                          backgroundColor: MaterialStateColor.resolveWith(
-                              (states) => AppColors.white),
-                          shape: MaterialStateProperty.resolveWith(
-                              (states) => RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(30),
-                                  ))),
-                    ),
-                  ),
+                  child: createGoogleButton(() {
+                    if (_formKey.currentState!.validate()) {
+                      //Login here
+                    }
+                  }, AppStrings.WithGoogle),
                 ),
               ],
             ),
@@ -174,10 +133,5 @@ class SignInBody extends StatelessWidget {
         ],
       ),
     );
-  }
-
-  void _goToDashboard(BuildContext context) {
-    Navigator.pushNamedAndRemoveUntil(
-        context, AppStrings.DashboardRoute, (Route<dynamic> route) => false);
   }
 }

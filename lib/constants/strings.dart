@@ -23,6 +23,12 @@ class AppStrings {
   static const ProfileRoute = '/profile';
   static const EditProfileRoute = '/edit_profile';
 
+  // Form Error Messges
+  static const EmailError = 'Enter A Valid Email ';
+  static const PasswordError = 'Enter A Valid Password';
+  static const UserNameError = 'Name Cannot be empty';
+  static const PhoneError = 'Enter a valid phone number';
+
 //Texts
   static const RealTimeService = 'Real time Services';
   static const VirtualServices = 'Virtual Services On-Demand';
@@ -43,6 +49,7 @@ class AppStrings {
   static const ForgotPassSub =
       'If you need help with resetting your password, we can help you with a link to reset it.';
   static const WithGoogle = 'Continue with Google';
+  static const SignUpWithGoogle = 'Signup with Google';
   static const Continue = 'Continue';
   static const Login = 'Login';
   static const Logout = 'Logout';

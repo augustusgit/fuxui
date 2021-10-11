@@ -1,36 +1,43 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:wurkfux/constants/images.dart';
+import 'package:wurkfux/constants/colors.dart';
 import 'package:wurkfux/constants/strings.dart';
+import 'package:wurkfux/view/utilities/size_config.dart';
+import 'package:wurkfux/view/widgets/custom_form_fields.dart';
 import 'package:wurkfux/view/widgets/spacing.dart';
 
-class LoginForm extends StatelessWidget {
-  const LoginForm({Key? key}) : super(key: key);
+class LoginForm extends StatefulWidget {
+  const LoginForm({Key? key, required this.formKey}) : super(key: key);
+  final GlobalKey formKey;
+
+  @override
+  _LoginFormState createState() => _LoginFormState();
+}
+
+class _LoginFormState extends State<LoginForm> {
+  String? _email, _password;
 
   @override
   Widget build(BuildContext context) {
     return Form(
+      key: widget.formKey,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(AppStrings.EmailAddressHint),
-          TextFormField(
-            keyboardType: TextInputType.emailAddress,
-            decoration: InputDecoration(
-              hintText: AppStrings.EmailAddressHint,
-              icon: SvgPicture.asset(AppImages.mail),
-            ),
+          Text(
+            AppStrings.EmailAddressHint,
+            style: TextStyle(
+                fontSize: getProportionatefontSize(11),
+                color: AppColors.formFieldLabel),
           ),
+          buildEmailField(AppStrings.EmailError, _email),
           Spacing.mediumHeight(),
-          Text(AppStrings.PasswordHint),
-          TextFormField(
-            obscureText: true,
-            decoration: InputDecoration(
-                hintText: AppStrings.PasswordHint,
-                icon: SvgPicture.asset(
-                  AppImages.loading,
-                )),
+          Text(
+            AppStrings.PasswordHint,
+            style: TextStyle(
+                fontSize: getProportionatefontSize(11),
+                color: AppColors.formFieldLabel),
           ),
+          buildPasswordField(AppStrings.PasswordError, _password),
           Spacing.mediumHeight()
         ],
       ),
