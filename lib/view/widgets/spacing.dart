@@ -18,6 +18,8 @@ class Spacing extends StatelessWidget {
 
   Spacing.betweenCard() : this.height(28);
 
+  Spacing.betweenCardFields() : this.height(12);
+
   Spacing.largeHeight() : this.height(32);
 
   Spacing.extraLargHeight() : this.height(getProportionateScreenHeight(80));

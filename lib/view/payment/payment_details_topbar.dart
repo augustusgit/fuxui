@@ -1,10 +1,9 @@
-import 'package:WurkFux/constants/colors.dart';
-import 'package:WurkFux/constants/images.dart';
-import 'package:WurkFux/constants/strings.dart';
-import 'package:WurkFux/view/utilities/size_config.dart';
-import 'package:WurkFux/view/widgets/spacing.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:wurkfux/constants/colors.dart';
+import 'package:wurkfux/view/utilities/size_config.dart';
+import 'package:wurkfux/view/widgets/spacing.dart';
 
 class PaymentDetailTopBar extends StatelessWidget {
   const PaymentDetailTopBar(

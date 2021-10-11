@@ -1,12 +1,14 @@
-import 'package:WurkFux/constants/colors.dart';
-import 'package:WurkFux/constants/images.dart';
-import 'package:WurkFux/constants/strings.dart';
-import 'package:WurkFux/view/paymentDetails/payment_detail_button.dart';
-import 'package:WurkFux/view/paymentDetails/payment_details_topbar.dart';
-import 'package:WurkFux/view/utilities/size_config.dart';
-import 'package:WurkFux/view/widgets/spacing.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:wurkfux/constants/colors.dart';
+import 'package:wurkfux/constants/images.dart';
+import 'package:wurkfux/constants/strings.dart';
+import 'package:wurkfux/view/payment/payment_detail_button.dart';
+import 'package:wurkfux/view/payment/payment_details_topbar.dart';
+import 'package:wurkfux/view/utilities/size_config.dart';
+import 'package:wurkfux/view/widgets/spacing.dart';
+import 'package:wurkfux/view/wurk_fux_icons.dart';
 
 class CardPaymentScreen extends StatefulWidget {
   const CardPaymentScreen({Key? key}) : super(key: key);
@@ -24,6 +26,7 @@ class _CardPaymentScreenState extends State<CardPaymentScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
         child: Container(
           decoration: BoxDecoration(
               borderRadius: BorderRadius.only(
@@ -36,7 +39,7 @@ class _CardPaymentScreenState extends State<CardPaymentScreen> {
             children: [
               PaymentDetailTopBar(
                 title: AppStrings.PaymentDetails,
-                imagePath: AppImages.paymentDetailCloseIcon,
+                imagePath: AppImages.closeBig,
               ),
               Spacing.mediumHeight(),
               Text(
@@ -70,9 +73,14 @@ class _CardPaymentScreenState extends State<CardPaymentScreen> {
                 height: getProportionateScreenHeight(64),
               ),
               Center(
-                  child: buildPaymentDetailButton(AppStrings.Pay, 166, () {
-                Navigator.pushNamed(context, AppStrings.CreateCustomOrder);
-              })),
+                child: buildPaymentDetailButton(
+                  AppStrings.Pay,
+                  166,
+                  () {
+                    //On Payment Success
+                  },
+                ),
+              ),
               Spacing.bigHeight()
             ],
           ),
@@ -163,11 +171,9 @@ class _CardPaymentScreenState extends State<CardPaymentScreen> {
                       });
                     },
                     decoration: InputDecoration(
-                      prefixIcon: SvgPicture.asset(
-                        AppImages.calendarIcon,
-                        fit: BoxFit.scaleDown,
-                        height: getProportionateScreenHeight(16),
-                        width: getProportionateScreenWidth(20),
+                      prefixIcon: Icon(
+                        WurkFuxIcons.calendar,
+                        size: 16.0,
                       ),
                       hintText: AppStrings.ExpiryDate,
                       hintStyle: TextStyle(

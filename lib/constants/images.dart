@@ -11,6 +11,12 @@ class AppImages {
   static const user = 'assets/svgs/user.svg';
   static const camera = 'assets/svgs/camera.svg';
 
+  static const masterCardIcon = 'assets/svgs/master_card_icon.svg';
+  static const cardNumberIcon = 'assets/svgs/card_number_icon.svg';
+  static const holderNameIcon = 'assets/svgs/holder_name_icon.svg';
+  static const cvcIcon = 'assets/svgs/credit_card_icon.svg';
+  static const labelIcon = 'assets/svgs/label_icon.svg';
+
   static const orderSummaryBackground = 'assets/svgs/floating_cogs.svg';
   static const virtualAssistant = 'assets/svgs/virtual.svg';
   static const oneOffProject = 'assets/svgs/one_off_project.svg';
