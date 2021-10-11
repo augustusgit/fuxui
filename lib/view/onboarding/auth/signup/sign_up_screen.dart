@@ -109,10 +109,7 @@ class SignUpBody extends StatelessWidget {
                 Padding(
                     padding: const EdgeInsets.only(bottom: 43),
                     child: createGoogleButton(() {
-                      if (_formKey.currentState!.validate()) {
-                        Navigator.pushNamed(
-                            context, AppStrings.EmailVerificationRoute);
-                      }
+                      _goToDashboard(context);
                     }, AppStrings.SignUpWithGoogle)),
               ],
             ),

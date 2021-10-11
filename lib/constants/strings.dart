@@ -19,11 +19,15 @@ class AppStrings {
   static const MailChatRoute = '/chat';
   static const ServiceDetailsRoute = '/service_details';
 
+  //Payment Routes
+  static const CardPaymentRoute = '/card_payment_details';
+  static const BtcPaymentRoute = '/btc_payment_details';
+
   // User profile
   static const ProfileRoute = '/profile';
   static const EditProfileRoute = '/edit_profile';
 
-  // Form Error Messges
+  // Form Error Messages
   static const EmailError = 'Enter A Valid Email ';
   static const PasswordError = 'Enter A Valid Password';
   static const UserNameError = 'Name Cannot be empty';
@@ -107,4 +111,24 @@ class AppStrings {
   static const OnBoardText2 = 'Scale Better With Two.';
   static const OnBoardText3 = 'Three gets the job done.';
   static const Next = 'Next';
+
+  //Payments
+  static const UseBtcInsteadText = 'use bitcoin instead';
+  static const UseCardInsteadText = 'use credit card instead';
+  static const PaymentDetails = 'Payment Details';
+  static const CardNumber = 'Card Number';
+  static const HolderName = 'Holder name';
+  static const CardHolder = 'Card Holder';
+  static const Expires = 'Expires';
+  static const ExpiryDate = 'Expiry date';
+  static const TnxId = 'Tnx ID';
+  static const TransactionId = 'Transaction ID';
+  static const Cvc = 'CVC';
+  static const Pay = 'Pay';
+  static const Copy = 'Copy';
+  static const Submit = 'Submit';
+  static const BtcPayInfo =
+      'Make a payment of 0.00321(\$15) bitcoin to the following wallet address, submit the transaction ID afterwards.';
+  static const PaymentDetailsInfo =
+      'Start typing to add your card details. Everything will update according to your data.';
 }

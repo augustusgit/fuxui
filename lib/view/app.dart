@@ -8,6 +8,8 @@ import 'package:wurkfux/view/main/services/service_detail_screen.dart';
 import 'package:wurkfux/view/main/services/services_screen.dart';
 import 'package:wurkfux/view/onboarding/splash.dart';
 import 'package:wurkfux/view/onboarding/welcome/main_welcome_screen.dart';
+import 'package:wurkfux/view/payment/btc_payment_screen.dart';
+import 'package:wurkfux/view/payment/card_payment_screen.dart';
 
 import 'main/chat/chat_screen.dart';
 import 'onboarding/auth/login/login_screen.dart';
@@ -68,6 +70,12 @@ class App extends StatelessWidget {
           break;
         case AppStrings.MailChatRoute:
           screen = ChatScreen();
+          break;
+        case AppStrings.CardPaymentRoute:
+          screen = CardPaymentScreen();
+          break;
+        case AppStrings.BtcPaymentRoute:
+          screen = BtcPaymentScreen();
           break;
         default:
           return null;

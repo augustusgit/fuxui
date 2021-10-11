@@ -31,6 +31,9 @@ class AppColors {
   static const lightGrey = Color.fromRGBO(0, 0, 0, 0.05);
   static const formFieldLabel = Color.fromRGBO(18, 18, 29, 0.3);
 
+  static const paymentDetailTextColor = Color.fromRGBO(26, 34, 55, 1);
+  static const paymentDetailSecondColor = Color.fromRGBO(18, 18, 29, 0.3);
+
   static const textColorPrimary = black;
 
   static const signUpBtnBg = Color.fromRGBO(0, 0, 0, 0.3);
