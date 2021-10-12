@@ -113,7 +113,7 @@ class LoginBody extends StatelessWidget {
               children: [
                 continueButton(() {
                   if (_formKey.currentState!.validate()) {
-                    //Login here
+                    Navigator.pushNamed(context, AppStrings.DashboardRoute);
                   }
                 }, 16.0, AppStrings.Continue),
                 SizedBox(
@@ -122,9 +122,7 @@ class LoginBody extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(bottom: 43),
                   child: createGoogleButton(() {
-                    if (_formKey.currentState!.validate()) {
-                      //Login here
-                    }
+                    Navigator.pushNamed(context, AppStrings.DashboardRoute);
                   }, AppStrings.WithGoogle),
                 ),
               ],

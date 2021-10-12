@@ -4,8 +4,8 @@ import 'package:wurkfux/constants/colors.dart';
 import 'package:wurkfux/constants/strings.dart';
 import 'package:wurkfux/view/main/chat/messages.dart';
 import 'package:wurkfux/view/main/dashboard.dart';
-import 'package:wurkfux/view/main/services/service_detail_screen.dart';
-import 'package:wurkfux/view/main/services/services_screen.dart';
+import 'package:wurkfux/view/main/projects/one_offs_screen.dart';
+import 'package:wurkfux/view/main/projects/project_details.dart';
 import 'package:wurkfux/view/onboarding/splash.dart';
 import 'package:wurkfux/view/onboarding/welcome/main_welcome_screen.dart';
 import 'package:wurkfux/view/payment/btc_payment_screen.dart';
@@ -59,11 +59,11 @@ class App extends StatelessWidget {
         case AppStrings.DashboardRoute:
           screen = Dashboard();
           break;
-        case AppStrings.ServicesRoute:
-          screen = ServicesScreen();
+        case AppStrings.OneOffsRoute:
+          screen = OneOffProjects();
           break;
-        case AppStrings.ServiceDetailsRoute:
-          screen = ServiceDetails();
+        case AppStrings.OneOffDetailsRoute:
+          screen = ProjectDetails();
           break;
         case AppStrings.MessagesRoute:
           screen = MessagesScreen();
