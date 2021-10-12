@@ -12,9 +12,9 @@ class OrdersRow extends StatelessWidget {
   }) : super(key: key);
 
   static const ordersItem = [
-    OrderType(title: 'Completed', total: 15, color: AppColors.green),
-    OrderType(title: 'Pending', total: 3, color: AppColors.amber),
-    OrderType(title: 'Cancelled', total: 2, color: AppColors.lightRed),
+    OrderType(title: 'Completed Order', total: 12, color: AppColors.green),
+    OrderType(title: 'Ongoing Order', total: 10, color: AppColors.amber),
+    OrderType(title: 'Cancelled Order', total: 2, color: AppColors.lightRed),
   ];
 
   @override

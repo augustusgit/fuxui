@@ -2,6 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:wurkfux/constants/colors.dart';
 import 'package:wurkfux/constants/strings.dart';
+import 'package:wurkfux/models/order_history.dart';
+import 'package:wurkfux/models/order_status.dart';
+
+import 'orders.dart';
 
 class OrdersScreen extends StatefulWidget {
   @override
@@ -52,13 +56,13 @@ class _Orders extends State<OrdersScreen> {
                   ),
                   tabs: [
                     Tab(
-                      text: 'In Progress (4)',
+                      text: 'In Progress (${activeHistories.length})',
                     ),
                     Tab(
-                      text: 'Completed (10)',
+                      text: 'Completed (${completedHistories.length})',
                     ),
                     Tab(
-                      text: 'Cancelled (8)',
+                      text: 'Cancelled (${cancelledHistories.length})',
                     ),
                   ],
                 ),
@@ -67,9 +71,18 @@ class _Orders extends State<OrdersScreen> {
             Expanded(
               child: TabBarView(
                 children: [
-                  Icon(Icons.directions_car),
-                  Icon(Icons.directions_transit),
-                  Icon(Icons.directions_bike),
+                  Histories(
+                    histories: activeHistories,
+                    orderStatus: OrderStatus.ONGOING,
+                  ),
+                  Histories(
+                    histories: completedHistories,
+                    orderStatus: OrderStatus.COMPLETED,
+                  ),
+                  Histories(
+                    histories: cancelledHistories,
+                    orderStatus: OrderStatus.CANCELLED,
+                  ),
                 ],
               ),
             ),

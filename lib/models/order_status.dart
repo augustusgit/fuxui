@@ -1,14 +1,14 @@
-enum OrderStatus { COMPLETED, PENDING, REJECTED }
+enum OrderStatus { COMPLETED, ONGOING, CANCELLED }
 
 extension OrderStatusExtension on OrderStatus {
   String get name {
     switch (this) {
       case OrderStatus.COMPLETED:
         return 'COMPLETED';
-      case OrderStatus.REJECTED:
-        return 'REJECTED';
+      case OrderStatus.CANCELLED:
+        return 'CANCELLED';
       default:
-        return 'PENDING';
+        return 'ONGOING';
     }
   }
 }
