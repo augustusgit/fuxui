@@ -130,70 +130,75 @@ class _Home extends State<HomeScreen> {
   }
 
   Widget _virtualAssistant() {
-    return Container(
-      width: MediaQuery.of(context).size.width,
-      height: getProportionateScreenWidth(120.0),
-      decoration: BoxDecoration(
-        color: AppColors.white,
-        borderRadius: BorderRadius.circular(15.0),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black,
-            blurRadius: 1.0,
-            spreadRadius: 0.0,
-            offset: Offset(-1.0, 1.0), // shadow direction: bottom right
-          ),
-        ],
-      ),
-      child: Row(
-        children: [
-          Container(
-            width: 80,
-            height: 100,
-            padding: const EdgeInsets.all(8.0),
-            child: CircleAvatar(
-              backgroundColor: AppColors.primaryColor.withOpacity(0.2),
-              child: Icon(
-                Icons.touch_app_rounded,
-                color: AppColors.primaryColor,
-                size: 32,
-              ),
+    return InkWell(
+      onTap: () {
+        Navigator.pushNamed(context, AppStrings.VirtualAssistantRoute);
+      },
+      child: Container(
+        width: MediaQuery.of(context).size.width,
+        height: getProportionateScreenWidth(120.0),
+        decoration: BoxDecoration(
+          color: AppColors.white,
+          borderRadius: BorderRadius.circular(15.0),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black,
+              blurRadius: 1.0,
+              spreadRadius: 0.0,
+              offset: Offset(-1.0, 1.0), // shadow direction: bottom right
             ),
-          ),
-          Expanded(
-            child: Container(
+          ],
+        ),
+        child: Row(
+          children: [
+            Container(
+              width: 80,
+              height: 100,
               padding: const EdgeInsets.all(8.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Text(
-                    "Virtual Assistant",
-                    softWrap: true,
-                    style: TextStyle(
-                      fontFamily: AppStrings.poppinsFont,
-                      color: AppColors.black,
-                      fontWeight: FontWeight.w700,
-                      fontSize: 18,
-                    ),
-                  ),
-                  Spacing.smallHeight(),
-                  Text(
-                    'Get a virtual assistant assigned to you for a month '
-                    'starting from \$500',
-                    softWrap: true,
-                    style: TextStyle(
-                      fontFamily: AppStrings.poppinsFont,
-                      color: AppColors.black,
-                      fontWeight: FontWeight.w300,
-                      fontSize: 14,
-                    ),
-                  ),
-                ],
+              child: CircleAvatar(
+                backgroundColor: AppColors.primaryColor.withOpacity(0.2),
+                child: Icon(
+                  Icons.touch_app_rounded,
+                  color: AppColors.primaryColor,
+                  size: 32,
+                ),
               ),
             ),
-          )
-        ],
+            Expanded(
+              child: Container(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Text(
+                      "Virtual Assistant",
+                      softWrap: true,
+                      style: TextStyle(
+                        fontFamily: AppStrings.poppinsFont,
+                        color: AppColors.black,
+                        fontWeight: FontWeight.w700,
+                        fontSize: 18,
+                      ),
+                    ),
+                    Spacing.smallHeight(),
+                    Text(
+                      'Get a virtual assistant assigned to you for a month '
+                      'starting from \$500',
+                      softWrap: true,
+                      style: TextStyle(
+                        fontFamily: AppStrings.poppinsFont,
+                        color: AppColors.black,
+                        fontWeight: FontWeight.w300,
+                        fontSize: 14,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

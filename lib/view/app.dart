@@ -6,6 +6,7 @@ import 'package:wurkfux/view/main/chat/messages.dart';
 import 'package:wurkfux/view/main/dashboard.dart';
 import 'package:wurkfux/view/main/projects/one_offs_screen.dart';
 import 'package:wurkfux/view/main/projects/project_details.dart';
+import 'package:wurkfux/view/main/va/virtual_assistance_init.dart';
 import 'package:wurkfux/view/onboarding/splash.dart';
 import 'package:wurkfux/view/onboarding/welcome/main_welcome_screen.dart';
 import 'package:wurkfux/view/payment/btc_payment_screen.dart';
@@ -61,6 +62,9 @@ class App extends StatelessWidget {
           break;
         case AppStrings.OneOffsRoute:
           screen = OneOffProjects();
+          break;
+        case AppStrings.VirtualAssistantRoute:
+          screen = VirtualAssistantForm();
           break;
         case AppStrings.OneOffDetailsRoute:
           screen = ProjectDetails();

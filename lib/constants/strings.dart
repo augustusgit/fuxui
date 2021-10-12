@@ -15,6 +15,7 @@ class AppStrings {
   static const DashboardRoute = '/dashboard';
   static const MessagesRoute = '/messages';
   static const OneOffsRoute = '/projects';
+  static const VirtualAssistantRoute = '/va';
   static const OrderHistoryRoute = '/history';
   static const MailChatRoute = '/chat';
   static const OneOffDetailsRoute = '/one_off_details';

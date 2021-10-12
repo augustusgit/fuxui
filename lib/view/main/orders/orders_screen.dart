@@ -22,6 +22,7 @@ class _Orders extends State<OrdersScreen> {
           AppStrings.OrdersTitle,
           style: TextStyle(
               color: AppColors.black,
+              fontWeight: FontWeight.w700,
               fontFamily: AppStrings.poppinsFont,
               fontSize: 24.0),
         ),
