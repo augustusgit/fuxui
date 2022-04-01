@@ -54,9 +54,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   Dots(slideIndex: _currentPageValue, numberOfDots: 3),
                   Spacing.mediumHeight(),
                   buildNextButton(() {
-                    if (_currentPageValue == 2) {
+                    // if (_currentPageValue == 2) {
                       Navigator.pushNamed(context, AppStrings.WelcomeRoute);
-                    }
+                    // }
                   }),
                 ],
               ),

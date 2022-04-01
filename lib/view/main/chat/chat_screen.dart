@@ -140,7 +140,7 @@ class CustomChatTextInput extends StatelessWidget {
 }
 
 AppBar createAppBar(BuildContext context, Function backPressed) {
-  var name = "Queen Catherina";
+  var name = "Queen Catherine";
   return AppBar(
     elevation: 0,
     automaticallyImplyLeading: false,
